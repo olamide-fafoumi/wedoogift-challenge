@@ -1,0 +1,15 @@
+<p>Le montant demandé n'est pas traitable</p>
+<p>Choix possible : </p>
+<div>
+    <button mat-raised-button 
+            color="warn" 
+            [mat-dialog-close]="possibleAmount.floor?.value">
+        {{possibleAmount.floor?.value}}
+    </button>
+
+    <button mat-raised-button 
+            color="warn" 
+            [mat-dialog-close]="possibleAmount.ceil?.value">
+        {{possibleAmount.ceil?.value}}
+    </button>
+</div>

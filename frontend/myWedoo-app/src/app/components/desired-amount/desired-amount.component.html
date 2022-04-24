@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <p>Montant désiré : </p>
+        <form (ngSubmit)="getCardsCombination()" [formGroup]="amountFormGroup">
+            <mat-form-field>
+                <input matInput 
+                       type="number" 
+                       formControlName="amountFormControl">
+            </mat-form-field>
+    
+            <div>
+                <button type='button' 
+                        mat-button color="warn"
+                        (click)=getPlusAmount()> + </button>
+                <button type='button' 
+                        mat-button color="warn"
+                        (click)=getMinusAmount()> - </button>
+            </div>
+    
+            <div>
+                <button type="submit"
+                        mat-raised-button
+                        color="warn">Valider</button>
+            </div>
+        </form>
+    </div>
+    <app-desired-amount-detail *ngIf='equalAmountData.cards'
+                                [cardCombinations]="equalAmountData">
+    </app-desired-amount-detail>
+</div>
